@@ -15,8 +15,7 @@ namespace SCH654
         public static bool logCon;
         public void GetServers()
         {
-            SqlDataSourceEnumerator sourceEnumerator
-                = SqlDataSourceEnumerator.Instance;
+            SqlDataSourceEnumerator sourceEnumerator = SqlDataSourceEnumerator.Instance;
             dtServers(sourceEnumerator.GetDataSources());
         }
 
