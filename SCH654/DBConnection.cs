@@ -7,63 +7,21 @@ namespace SCH654
 {
     class DBConnection
     {
-        public event Action<DataTable> dtServers;
-        public event Action<DataTable> dtDatabases;
-        public event Action<bool> conState;
-        private Registry_Class registry = new Registry_Class();
-        public string cds, cui, cpw;
-        public static bool logCon;
-        public void GetServers()
+        private static string dataSource = @"VICTOR-PC\DOTSUSQL";
+        //private static string dataSource = @"ПОЛЬЗОВАТЕЛЬ-ПК\VICTOR_SQL";
+        private static string initialCatalog = "school654";
+        private static string userID = "sa";
+        private static string password = "123";
+        private static bool checkSecurity = true;
+        public static SqlConnection sqlConnection = new SqlConnection($"Data Source = {dataSource}; Initial Catalog = {initialCatalog};" +
+            $"Persist Security Info = {checkSecurity}; User ID = {userID}; password = \"{password}\"");
+        public DataSet TableFill(string query, SqlConnection sql)
         {
-            SqlDataSourceEnumerator sourceEnumerator = SqlDataSourceEnumerator.Instance;
-            dtServers(sourceEnumerator.GetDataSources());
-        }
-
-        public void GetDatabases()
-        {
-            SqlConnection sql = new SqlConnection("Data Source = " + cds +
-                "; Initial Catalog = master; Persist Security Info = true; " +
-                " User ID = " + cui + "; Password = \"" + cpw + "\"");
-            try
-            {
-                SqlCommand command = new SqlCommand("select name from sys.databases " +
-                    "where name not in ('master','tempdb','model','msdb')", sql);
-                DataTable table = new DataTable();
-                sql.Open();
-                table.Load(command.ExecuteReader());
-                dtDatabases(table);
-            }
-            catch (SqlException ex)
-            {
-                Registry_Class.error_message += "\n" + DateTime.Now.ToLongDateString()
-                    + ex.Message;
-            }
-            finally
-            {
-                sql.Close();
-            }
-        }
-
-        public void CheckConnection()
-        {
-            try
-            {
-                registry.GetRegistry();
-                Registry_Class.sqlConnection.Open();
-                conState(true);
-                logCon = true;
-            }
-            catch (Exception ex)
-            {
-                Registry_Class.error_message += "\n" + DateTime.Now.ToLongDateString()
-                    + ex.Message;
-                conState(false);
-                logCon = false;
-            }
-            finally
-            {
-                Registry_Class.sqlConnection.Close();
-            }
+            SqlDataAdapter adapter = new SqlDataAdapter(query, sql);
+            DataSet dataSet = new DataSet();
+            dataSet.Clear();
+            adapter.Fill(dataSet);
+            return dataSet;
         }
     }
 }
