@@ -31,6 +31,7 @@ namespace SCH654
                     dbTables.dependency.OnChange += ChangeOrder;
 
                     dgvOrders.DataSource = dbTables.DTOrders;
+                    dgvOrders.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                     dgvOrders.Columns[0].Visible = false;
                     dgvOrders.Columns[1].Visible = false;
                     dgvOrders.Columns[2].HeaderText = "Предмет";
@@ -52,20 +53,10 @@ namespace SCH654
                 OrdersFill();
         }
 
-        private void pbAdd_Click(object sender, EventArgs e)
+        public void pbAdd_Click(object sender, EventArgs e)
         {
-            try
-            {
-                storedProcedure.SPOrderInsert(tbDescription.Text, Convert.ToDateTime(tbDateOrder.Text), cbOrderStatus.SelectedItem.ToString());
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            tbDescription.Clear();
-            tbDateOrder.Clear();
-            cbOrderStatus.SelectedIndex = -1;
+            DynamicObjects dynamicObjects = new DynamicObjects();
+            dynamicObjects.NewCreateOrderCreate();
         }
     }
 }

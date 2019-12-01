@@ -47,13 +47,6 @@
             this.dgvStationery = new System.Windows.Forms.DataGridView();
             this.tcReports = new System.Windows.Forms.TabPage();
             this.tpSettings = new System.Windows.Forms.TabPage();
-            this.lblOrders = new System.Windows.Forms.Label();
-            this.tbDescription = new System.Windows.Forms.TextBox();
-            this.lblDateOrder = new System.Windows.Forms.Label();
-            this.tbDateOrder = new System.Windows.Forms.TextBox();
-            this.lblOrderStatus = new System.Windows.Forms.Label();
-            this.cbOrderStatus = new System.Windows.Forms.ComboBox();
-            this.gbManipulation = new System.Windows.Forms.GroupBox();
             this.tcMain.SuspendLayout();
             this.tpOrders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
@@ -66,7 +59,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDevice)).BeginInit();
             this.tpMagazineStationery.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStationery)).BeginInit();
-            this.gbManipulation.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcMain
@@ -87,7 +79,6 @@
             // 
             this.tpOrders.Controls.Add(this.dgvOrders);
             this.tpOrders.Controls.Add(this.pnManipulation);
-            this.tpOrders.Controls.Add(this.gbManipulation);
             this.tpOrders.Location = new System.Drawing.Point(4, 22);
             this.tpOrders.Name = "tpOrders";
             this.tpOrders.Padding = new System.Windows.Forms.Padding(3);
@@ -101,9 +92,9 @@
             this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrders.ContextMenuStrip = this.cmsDevice;
             this.dgvOrders.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvOrders.Location = new System.Drawing.Point(203, 51);
+            this.dgvOrders.Location = new System.Drawing.Point(3, 51);
             this.dgvOrders.Name = "dgvOrders";
-            this.dgvOrders.Size = new System.Drawing.Size(668, 389);
+            this.dgvOrders.Size = new System.Drawing.Size(868, 389);
             this.dgvOrders.TabIndex = 20;
             // 
             // cmsDevice
@@ -128,9 +119,9 @@
             this.pnManipulation.Controls.Add(this.pbUpdate);
             this.pnManipulation.Controls.Add(this.lblUpdate);
             this.pnManipulation.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnManipulation.Location = new System.Drawing.Point(203, 3);
+            this.pnManipulation.Location = new System.Drawing.Point(3, 3);
             this.pnManipulation.Name = "pnManipulation";
-            this.pnManipulation.Size = new System.Drawing.Size(668, 48);
+            this.pnManipulation.Size = new System.Drawing.Size(868, 48);
             this.pnManipulation.TabIndex = 19;
             // 
             // pbAdd
@@ -258,84 +249,6 @@
             this.tpSettings.Text = "Настройки";
             this.tpSettings.UseVisualStyleBackColor = true;
             // 
-            // lblOrders
-            // 
-            this.lblOrders.AutoSize = true;
-            this.lblOrders.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblOrders.Location = new System.Drawing.Point(3, 16);
-            this.lblOrders.Name = "lblOrders";
-            this.lblOrders.Size = new System.Drawing.Size(38, 13);
-            this.lblOrders.TabIndex = 1;
-            this.lblOrders.Text = "Заказ";
-            // 
-            // tbDescription
-            // 
-            this.tbDescription.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tbDescription.Location = new System.Drawing.Point(3, 29);
-            this.tbDescription.Multiline = true;
-            this.tbDescription.Name = "tbDescription";
-            this.tbDescription.Size = new System.Drawing.Size(194, 70);
-            this.tbDescription.TabIndex = 2;
-            // 
-            // lblDateOrder
-            // 
-            this.lblDateOrder.AutoSize = true;
-            this.lblDateOrder.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblDateOrder.Location = new System.Drawing.Point(3, 99);
-            this.lblDateOrder.Name = "lblDateOrder";
-            this.lblDateOrder.Size = new System.Drawing.Size(72, 13);
-            this.lblDateOrder.TabIndex = 3;
-            this.lblDateOrder.Text = "Дата заказа";
-            // 
-            // tbDateOrder
-            // 
-            this.tbDateOrder.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tbDateOrder.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tbDateOrder.Location = new System.Drawing.Point(3, 112);
-            this.tbDateOrder.Name = "tbDateOrder";
-            this.tbDateOrder.Size = new System.Drawing.Size(194, 20);
-            this.tbDateOrder.TabIndex = 4;
-            // 
-            // lblOrderStatus
-            // 
-            this.lblOrderStatus.AutoSize = true;
-            this.lblOrderStatus.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblOrderStatus.Location = new System.Drawing.Point(3, 132);
-            this.lblOrderStatus.Name = "lblOrderStatus";
-            this.lblOrderStatus.Size = new System.Drawing.Size(80, 13);
-            this.lblOrderStatus.TabIndex = 5;
-            this.lblOrderStatus.Text = "Статус заказа";
-            // 
-            // cbOrderStatus
-            // 
-            this.cbOrderStatus.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cbOrderStatus.FormattingEnabled = true;
-            this.cbOrderStatus.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.cbOrderStatus.Items.AddRange(new object[] {
-            "Готов к выдаче",
-            "В обработке",
-            "Принят"});
-            this.cbOrderStatus.Location = new System.Drawing.Point(3, 145);
-            this.cbOrderStatus.Name = "cbOrderStatus";
-            this.cbOrderStatus.Size = new System.Drawing.Size(194, 21);
-            this.cbOrderStatus.TabIndex = 6;
-            // 
-            // gbManipulation
-            // 
-            this.gbManipulation.Controls.Add(this.cbOrderStatus);
-            this.gbManipulation.Controls.Add(this.lblOrderStatus);
-            this.gbManipulation.Controls.Add(this.tbDateOrder);
-            this.gbManipulation.Controls.Add(this.lblDateOrder);
-            this.gbManipulation.Controls.Add(this.tbDescription);
-            this.gbManipulation.Controls.Add(this.lblOrders);
-            this.gbManipulation.Dock = System.Windows.Forms.DockStyle.Left;
-            this.gbManipulation.Location = new System.Drawing.Point(3, 3);
-            this.gbManipulation.Name = "gbManipulation";
-            this.gbManipulation.Size = new System.Drawing.Size(200, 437);
-            this.gbManipulation.TabIndex = 1;
-            this.gbManipulation.TabStop = false;
-            this.gbManipulation.Text = "Манипуляция данными";
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -344,6 +257,7 @@
             this.Controls.Add(this.tcMain);
             this.MaximizeBox = false;
             this.Name = "MainWindow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Учёт периферийных устройств и канцелярии";
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.tcMain.ResumeLayout(false);
@@ -359,8 +273,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDevice)).EndInit();
             this.tpMagazineStationery.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStationery)).EndInit();
-            this.gbManipulation.ResumeLayout(false);
-            this.gbManipulation.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -385,13 +297,6 @@
         private System.Windows.Forms.Panel pnManipulation;
         private System.Windows.Forms.DataGridView dgvOrders;
         private System.Windows.Forms.ToolStripMenuItem изменитьToolStripMenuItem;
-        private System.Windows.Forms.GroupBox gbManipulation;
-        private System.Windows.Forms.ComboBox cbOrderStatus;
-        private System.Windows.Forms.Label lblOrderStatus;
-        private System.Windows.Forms.TextBox tbDateOrder;
-        private System.Windows.Forms.Label lblDateOrder;
-        private System.Windows.Forms.TextBox tbDescription;
-        private System.Windows.Forms.Label lblOrders;
     }
 }
 

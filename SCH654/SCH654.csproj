@@ -48,6 +48,7 @@
     <Compile Include="DBConnection.cs" />
     <Compile Include="DBStoredProcedure.cs" />
     <Compile Include="DBTables.cs" />
+    <Compile Include="DynamicObjects.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
