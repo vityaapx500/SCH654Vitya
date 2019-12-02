@@ -18,6 +18,35 @@ namespace SCH654
         {
             Thread threadOrder = new Thread(OrdersFill);
             threadOrder.Start();
+            MainMenuConstraint(AuthorizationFrom.userRole);
+        }
+        public void MainMenuConstraint(int userRole)   //загрузка формы с разрешениями для пользователей
+        {
+            switch (userRole)
+            {
+                case 1:
+                    msAdmin.Visible = true;
+                    pbUpdate.Visible = true;
+                    lblUpdate.Visible = true;
+                    lblDelete.Visible = true;
+                    pbDelete.Visible = true;
+                    dgvOrders.Visible = true;
+                    break;
+                case 2:
+                    pbUpdate.Visible = false;
+                    lblUpdate.Visible = false;
+                    lblDelete.Visible = false;
+                    pbDelete.Visible = false;
+                    dgvOrders.Visible = false;
+                    break;
+                case 3:
+                    pbUpdate.Visible = true;
+                    lblUpdate.Visible = true;
+                    lblDelete.Visible = true;
+                    pbDelete.Visible = true;
+                    dgvOrders.Visible = true;
+                    break;
+            }
         }
         private void OrdersFill()
         {
@@ -32,13 +61,12 @@ namespace SCH654
 
                     dgvOrders.DataSource = dbTables.DTOrders;
                     dgvOrders.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                    dgvOrders.Columns[0].Visible = false;
-                    dgvOrders.Columns[1].Visible = false;
-                    dgvOrders.Columns[2].HeaderText = "Предмет";
-                    dgvOrders.Columns[3].HeaderText = "Описание";
-                    dgvOrders.Columns[3].Width = 250;
-                    dgvOrders.Columns[4].HeaderText = "Дата заказа";
-                    dgvOrders.Columns[5].HeaderText = "Статус заказа";
+                    dgvOrders.Columns[0].Width = 30;
+                    dgvOrders.Columns[0].HeaderText = "№ п/п";
+                    dgvOrders.Columns[1].HeaderText = "Описание";
+                    dgvOrders.Columns[1].Width = 250;
+                    dgvOrders.Columns[2].HeaderText = "Дата заказа";
+                    dgvOrders.Columns[3].HeaderText = "Статус заказа";
                 }
                 catch (Exception ex)
                 {
@@ -57,6 +85,67 @@ namespace SCH654
         {
             DynamicObjects dynamicObjects = new DynamicObjects();
             dynamicObjects.NewCreateOrderCreate();
+        }
+        private void cmiExitProfile_Click(object sender, EventArgs e)    //выход из профиля
+        {
+            switch (AuthorizationFrom.userRole)
+            {
+                case 1:
+                    pbUpdate.Visible = false;
+                    lblUpdate.Visible = false;
+                    lblDelete.Visible = false;
+                    pbDelete.Visible = false;
+                    dgvOrders.Visible = false;
+                    break;
+                case 2:
+                    pbUpdate.Visible = false;
+                    lblUpdate.Visible = false;
+                    lblDelete.Visible = false;
+                    pbDelete.Visible = false;
+                    dgvOrders.Visible = false;
+                    break;
+                case 3:
+                    pbUpdate.Visible = false;
+                    lblUpdate.Visible = false;
+                    lblDelete.Visible = false;
+                    pbDelete.Visible = false;
+                    dgvOrders.Visible = false;
+                    break;
+                
+            }
+            Hide();
+            AuthorizationFrom autFm = new AuthorizationFrom();
+            autFm.Show();
+            AuthorizationFrom.userRole = 0;
+        }
+
+        private void заврешитьРаботуToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            заврешитьРаботуToolStripMenuItem_Click(sender, e);
+        }
+
+        private void пользователиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Users users = new Users();
+            switch (AuthorizationFrom.userRole)
+            {
+                case 1:
+                    users.btnInsert.Enabled = true;
+                    users.btnUpdate.Enabled = true;
+                    users.btnDelete.Enabled = true;
+                    break;
+                            }
+            users.Show(this);
+        }
+
+        private void pbDelete_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

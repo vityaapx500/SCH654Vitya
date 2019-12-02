@@ -5,15 +5,16 @@ namespace SCH654
 {
     class DynamicObjects
     {
+        DataManipulation dataManipulation = new DataManipulation();
         DBStoredProcedure storedProcedure = new DBStoredProcedure();
         MainWindow mainWindow = new MainWindow();
         Form fmCreateOrder = new Form();
         Label lblOrder = new Label();
-        TextBox tbOrder = new TextBox();
+        public TextBox tbOrder = new TextBox();
         Label lblDateOrder = new Label();
-        TextBox tbDateOrder = new TextBox();
+        public TextBox tbDateOrder = new TextBox();
         Label lblStatus = new Label();
-        ComboBox cbStatus = new ComboBox();
+        public ComboBox cbStatus = new ComboBox();
         Button btnMakeOrder = new Button();
         Button btnCancel = new Button();
         public Form parentCteate = new Form();
@@ -35,7 +36,7 @@ namespace SCH654
             tbDateOrder.Dock = DockStyle.Top;
             lblDateOrder.Text = "Дата заказа";
             lblDateOrder.Dock = DockStyle.Top;
-            tbDateOrder.Text = DateTime.Now.ToShortDateString();
+            tbDateOrder.Text = DateTime.Now.ToString("MM.dd.yyyy");
             lblStatus.Text = "Статус заказа";
             lblStatus.Dock = DockStyle.Top;
             cbStatus.Dock = DockStyle.Top;
@@ -43,7 +44,7 @@ namespace SCH654
             cbStatus.Items.AddRange(orderStatus);
             btnMakeOrder.Text = "Сделать заказ";
             btnMakeOrder.Dock = DockStyle.Top;
-            btnMakeOrder.Click += AddOrder;
+            btnMakeOrder.Click += dataManipulation.AddOrder;
             btnCancel.Dock = DockStyle.Top;
             btnCancel.Text = "Отмена";
             btnCancel.Click += btnCancel_Click;
@@ -58,21 +59,6 @@ namespace SCH654
             fmCreateOrder.Controls.Add(lblOrder);
             fmCreateOrder.Show(parentCteate);
 
-        }
-        private void AddOrder(object sender, EventArgs e)
-        {
-            try
-            {
-                storedProcedure.SPOrderInsert(tbOrder.Text, Convert.ToDateTime(tbDateOrder.Text), cbStatus.SelectedItem.ToString());
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            tbOrder.Clear();
-            tbDateOrder.Clear();
-            cbStatus.SelectedIndex = -1;
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {

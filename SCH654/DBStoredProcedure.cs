@@ -36,8 +36,99 @@ namespace SCH654
         {
             MessageBox.Show(e.Message);
         }
+        //Процедуры для таблицы Роли
+        public void SPRoleInsert(string roleName, string adminRole, string teacher, string manager_order) //Добавление роли
+        {
+            ConfigurationProcedure("role_insert");
+
+            storedProcedure.Parameters.AddWithValue("@role_name", roleName);
+            storedProcedure.Parameters.AddWithValue("@admin_role", adminRole);
+            storedProcedure.Parameters.AddWithValue("@teacher", teacher);
+            storedProcedure.Parameters.AddWithValue("@manager_order", manager_order);
+
+            ExecuteStoredProcedure();
+        }
+
+        public void SPRoleUpdate(Int32 idRole, string roleName, string adminRole, string teacher, string manager_order) //Обновление данных о роли
+        {
+            ConfigurationProcedure("role_update");
+
+            storedProcedure.Parameters.AddWithValue("@ID_role", idRole);
+            storedProcedure.Parameters.AddWithValue("@role_name", roleName);
+            storedProcedure.Parameters.AddWithValue("@admin_role", adminRole);
+            storedProcedure.Parameters.AddWithValue("@teacher", teacher);
+            storedProcedure.Parameters.AddWithValue("@manager_order", manager_order);
+
+            ExecuteStoredProcedure();
+        }
+
+        public void SPRoleDelete(Int32 idRole) //Удаление роли
+        {
+            ConfigurationProcedure("role_delete");
+
+            storedProcedure.Parameters.AddWithValue("@ID_role", idRole);
+
+            ExecuteStoredProcedure();
+        }
+
+        public void SPRoleLogicalDelete(Int32 idRole) //Логическое удаление роли
+        {
+            ConfigurationProcedure("role_logical_delete");
+
+            storedProcedure.Parameters.AddWithValue("@ID_role", idRole);
+
+            ExecuteStoredProcedure();
+        }
+
+        //Процедуры для таблицы Пользоавтели
+        public void SPUsersInsert(string surname, string name, string pantronymic, string loginUser, string passwordUser, Int32 userRoleID) //Добавление пользователя
+        {
+            ConfigurationProcedure("users_insert");
+
+            storedProcedure.Parameters.AddWithValue("@surname", surname);
+            storedProcedure.Parameters.AddWithValue("@name", name);
+            storedProcedure.Parameters.AddWithValue("@pantronymic", pantronymic);
+            storedProcedure.Parameters.AddWithValue("@login", loginUser);
+            storedProcedure.Parameters.AddWithValue("@password", passwordUser);
+            storedProcedure.Parameters.AddWithValue("@user_role_id", userRoleID);
+
+            ExecuteStoredProcedure();
+        }
+
+        public void SPUsersUpdate(Int32 idUser, string surname, string name, string pantronymic, string loginUser, string passwordUser, Int32 userRoleID) //Обновление данных о пользователе
+        {
+            ConfigurationProcedure("users_update");
+
+            storedProcedure.Parameters.AddWithValue("ID_user", idUser);
+            storedProcedure.Parameters.AddWithValue("@surname", surname);
+            storedProcedure.Parameters.AddWithValue("@name", name);
+            storedProcedure.Parameters.AddWithValue("@pantronymic", pantronymic);
+            storedProcedure.Parameters.AddWithValue("@login", loginUser);
+            storedProcedure.Parameters.AddWithValue("@password", passwordUser);
+            storedProcedure.Parameters.AddWithValue("@user_role_id", userRoleID);
+
+            ExecuteStoredProcedure();
+        }
+
+        public void SPUsersDelete(Int32 idUser) //Удаление пользователя
+        {
+            ConfigurationProcedure("users_delete");
+
+            storedProcedure.Parameters.AddWithValue("@ID_user", idUser);
+
+            ExecuteStoredProcedure();
+        }
+
+        public void SPUsersLogicalDelete(Int32 idUser) //Логическое удаление пользователя
+        {
+            ConfigurationProcedure("users_logical_delete");
+
+            storedProcedure.Parameters.AddWithValue("@ID_user", idUser);
+
+            ExecuteStoredProcedure();
+        }
         //Процедуры для таблицы Заказы
-        public void SPOrderInsert(string description, DateTime dateOrder, string orderStatus) //Добавление заказа
+        public void SPOrderInsert(string description, string dateOrder, string orderStatus) //Добавление заказа
         {
             ConfigurationProcedure("order_insert");
 
@@ -48,7 +139,7 @@ namespace SCH654
             ExecuteStoredProcedure();
         }
 
-        public void SPOrderUpdate(Int32 idOrder, string description, DateTime dateOrder, string orderStatus) //Обновление данных о заказе
+        public void SPOrderUpdate(Int32 idOrder, string description, string dateOrder, string orderStatus) //Обновление данных о заказе
         {
             ConfigurationProcedure("order_update");
 

@@ -45,6 +45,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthorizationFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AuthorizationFrom.Designer.cs">
+      <DependentUpon>AuthorizationFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataManipulation.cs" />
     <Compile Include="DBConnection.cs" />
     <Compile Include="DBStoredProcedure.cs" />
     <Compile Include="DBTables.cs" />
@@ -57,12 +64,27 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistrationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrationForm.Designer.cs">
+      <DependentUpon>RegistrationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registry_Class.cs" />
     <Compile Include="MessageUser.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MessageUser.resx</DependentUpon>
     </Compile>
+    <Compile Include="Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users.Designer.cs">
+      <DependentUpon>Users.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AuthorizationFrom.resx">
+      <DependentUpon>AuthorizationFrom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -79,6 +101,12 @@
     <EmbeddedResource Include="MessageUser.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>MessageUser.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistrationForm.resx">
+      <DependentUpon>RegistrationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users.resx">
+      <DependentUpon>Users.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

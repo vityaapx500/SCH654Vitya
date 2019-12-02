@@ -9,20 +9,20 @@ namespace SCH654
     {
         public SqlCommand command = new SqlCommand("", DBConnection.sqlConnection);
         public DataTable DTDeviceType = new DataTable("device_type");
-        public DataTable DTItems = new DataTable("items");
         public DataTable DTMagazineDevice= new DataTable("magazine_device");
         public DataTable DTMagazineStationery = new DataTable("magazine_stationery");
         public DataTable DTManufacturer = new DataTable("manufacturer");
         public DataTable DTOrders = new DataTable("orders");
+        public DataTable DTRoles = new DataTable("roles");
+        public DataTable DTUsers = new DataTable("users");
 
-        public string QRMagazineDevice = "SELECT [ID_device], [type_ID], [name_type], [manufacturer_ID], [name_manufacturer], [model], [amount], [date_acceptance] from [dbo].[magazine_device] " +
-            "inner join [dbo].[device_type] on [dbo].[magazine_device].[type_ID] = device_type.ID_type " +
-            "inner join [dbo].[manufacturer] on [dbo].[magazine_device].[manufacturer_ID] = [dbo].[manufacturer].[ID_manufacturer] " +
-            "where device_logical_delete = 0";
-        public string QRMagazineStationery = "select [ID_stationery], [manufacturer_ID], [name_manufacturer], [name_stationery], [type_stationary], [amount], [date_acceptance] from [dbo].[magazine_stationery] " +
-            "inner join [dbo].[manufacturer] on [dbo].[magazine_stationery].[manufacturer_ID] = [dbo].[manufacturer].[ID_manufacturer] where [stationery_logical_delete] = 0";
-        public string QROrder = "select [ID_order], [item_ID], [name_item], [description], [date_order], [order_status] from [dbo].[orders] " +
-            "inner join [dbo].[items] on [dbo].[orders].[item_ID] = [dbo].[items].[ID_item] where order_logical_delete = 0";
+        public string QRMagazineDevice = "SELECT [ID_device], [name_type], [manufacturer], [model], [amount], [date_acceptance] from [dbo].[magazine_device " +
+            "inner join[dbo].[device_type] on[dbo].[magazine_device].[type_ID] = device_type.ID_type";
+        public string QRMagazineStationery = "select [ID_stationery], [manufacturer], [name_stationery], [type_stationary], [amount], [date_acceptance] from [dbo].[magazine_stationery] ";
+        public string QROrder = "select [ID_order], [description], [date_order], [order_status] from [dbo].[orders] where order_logical_delete = 0";
+        public string QRRoles = "select * from [dbo].[roles] where [role_logical_delete] = 0";
+        public string QRRolesForComboBox = "select R.[ID_role], [role_name] from [dbo].[roles] R where [role_logical_delete] = 0";
+        public string QRUsers = "select * from [dbo].[users] where [user_logical_delete] = 0";
         public SqlDependency dependency = new SqlDependency();
         private void DataTableFill(DataTable table, string query)
         {
@@ -44,6 +44,18 @@ namespace SCH654
             {
                 DBConnection.sqlConnection.Close();
             }
+        }
+        public void DTRolesFill()
+        {
+            DataTableFill(DTRoles, QRRoles);
+        }
+        public void DTRolesForComboBoxFill()
+        {
+            DataTableFill(DTRoles, QRRolesForComboBox);
+        }
+        public void DTUsersFill()
+        {
+            DataTableFill(DTUsers, QRUsers);
         }
         public void DTOrderFill()
         {

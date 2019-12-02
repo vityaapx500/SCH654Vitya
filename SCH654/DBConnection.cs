@@ -9,7 +9,7 @@ namespace SCH654
     {
         private static string dataSource = @"VICTOR-PC\DOTSUSQL";
         //private static string dataSource = @"ВИКТОР-ПК\VICTOR_SQL";
-        private static string initialCatalog = "school654";
+        private static string initialCatalog = "school654_v1";
         private static string userID = "sa";
         private static string password = "123";
         private static bool checkSecurity = true;

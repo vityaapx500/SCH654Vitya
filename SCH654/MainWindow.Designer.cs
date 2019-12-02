@@ -29,11 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.cmsDevice = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.изменитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.выйтиИзУчётнойЗаписиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.заврешитьРаботуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.msAdmin = new System.Windows.Forms.MenuStrip();
+            this.администрированиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ролиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.пользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tcMain = new System.Windows.Forms.TabControl();
             this.tpOrders = new System.Windows.Forms.TabPage();
             this.dgvOrders = new System.Windows.Forms.DataGridView();
-            this.cmsDevice = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.изменитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnManipulation = new System.Windows.Forms.Panel();
             this.pbAdd = new System.Windows.Forms.PictureBox();
             this.lblDelete = new System.Windows.Forms.Label();
@@ -46,11 +53,13 @@
             this.tpMagazineStationery = new System.Windows.Forms.TabPage();
             this.dgvStationery = new System.Windows.Forms.DataGridView();
             this.tcReports = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.tpSettings = new System.Windows.Forms.TabPage();
+            this.cmsDevice.SuspendLayout();
+            this.msAdmin.SuspendLayout();
             this.tcMain.SuspendLayout();
             this.tpOrders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
-            this.cmsDevice.SuspendLayout();
             this.pnManipulation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDelete)).BeginInit();
@@ -59,7 +68,76 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDevice)).BeginInit();
             this.tpMagazineStationery.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStationery)).BeginInit();
+            this.tcReports.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // cmsDevice
+            // 
+            this.cmsDevice.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.изменитьToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.выйтиИзУчётнойЗаписиToolStripMenuItem,
+            this.заврешитьРаботуToolStripMenuItem});
+            this.cmsDevice.Name = "cmsDevice";
+            this.cmsDevice.Size = new System.Drawing.Size(214, 76);
+            // 
+            // изменитьToolStripMenuItem
+            // 
+            this.изменитьToolStripMenuItem.Name = "изменитьToolStripMenuItem";
+            this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.изменитьToolStripMenuItem.Text = "Изменить";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(210, 6);
+            // 
+            // выйтиИзУчётнойЗаписиToolStripMenuItem
+            // 
+            this.выйтиИзУчётнойЗаписиToolStripMenuItem.Name = "выйтиИзУчётнойЗаписиToolStripMenuItem";
+            this.выйтиИзУчётнойЗаписиToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.выйтиИзУчётнойЗаписиToolStripMenuItem.Text = "Выйти из учётной записи";
+            this.выйтиИзУчётнойЗаписиToolStripMenuItem.Click += new System.EventHandler(this.cmiExitProfile_Click);
+            // 
+            // заврешитьРаботуToolStripMenuItem
+            // 
+            this.заврешитьРаботуToolStripMenuItem.Name = "заврешитьРаботуToolStripMenuItem";
+            this.заврешитьРаботуToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.заврешитьРаботуToolStripMenuItem.Text = "Завершить работу";
+            this.заврешитьРаботуToolStripMenuItem.Click += new System.EventHandler(this.заврешитьРаботуToolStripMenuItem_Click);
+            // 
+            // msAdmin
+            // 
+            this.msAdmin.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.администрированиеToolStripMenuItem});
+            this.msAdmin.Location = new System.Drawing.Point(0, 0);
+            this.msAdmin.Name = "msAdmin";
+            this.msAdmin.Size = new System.Drawing.Size(882, 24);
+            this.msAdmin.TabIndex = 3;
+            this.msAdmin.Text = "menuStrip1";
+            this.msAdmin.Visible = false;
+            // 
+            // администрированиеToolStripMenuItem
+            // 
+            this.администрированиеToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ролиToolStripMenuItem,
+            this.пользователиToolStripMenuItem});
+            this.администрированиеToolStripMenuItem.Name = "администрированиеToolStripMenuItem";
+            this.администрированиеToolStripMenuItem.Size = new System.Drawing.Size(134, 20);
+            this.администрированиеToolStripMenuItem.Text = "Администрирование";
+            // 
+            // ролиToolStripMenuItem
+            // 
+            this.ролиToolStripMenuItem.Name = "ролиToolStripMenuItem";
+            this.ролиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ролиToolStripMenuItem.Text = "Роли";
+            // 
+            // пользователиToolStripMenuItem
+            // 
+            this.пользователиToolStripMenuItem.Name = "пользователиToolStripMenuItem";
+            this.пользователиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.пользователиToolStripMenuItem.Text = "Пользователи";
+            this.пользователиToolStripMenuItem.Click += new System.EventHandler(this.пользователиToolStripMenuItem_Click);
             // 
             // tcMain
             // 
@@ -73,10 +151,11 @@
             this.tcMain.Name = "tcMain";
             this.tcMain.SelectedIndex = 0;
             this.tcMain.Size = new System.Drawing.Size(882, 469);
-            this.tcMain.TabIndex = 0;
+            this.tcMain.TabIndex = 4;
             // 
             // tpOrders
             // 
+            this.tpOrders.ContextMenuStrip = this.cmsDevice;
             this.tpOrders.Controls.Add(this.dgvOrders);
             this.tpOrders.Controls.Add(this.pnManipulation);
             this.tpOrders.Location = new System.Drawing.Point(4, 22);
@@ -89,26 +168,15 @@
             // 
             // dgvOrders
             // 
+            this.dgvOrders.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrders.ContextMenuStrip = this.cmsDevice;
             this.dgvOrders.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvOrders.Location = new System.Drawing.Point(3, 51);
+            this.dgvOrders.Location = new System.Drawing.Point(3, 66);
             this.dgvOrders.Name = "dgvOrders";
-            this.dgvOrders.Size = new System.Drawing.Size(868, 389);
+            this.dgvOrders.ReadOnly = true;
+            this.dgvOrders.Size = new System.Drawing.Size(868, 374);
             this.dgvOrders.TabIndex = 20;
-            // 
-            // cmsDevice
-            // 
-            this.cmsDevice.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.изменитьToolStripMenuItem});
-            this.cmsDevice.Name = "cmsDevice";
-            this.cmsDevice.Size = new System.Drawing.Size(129, 26);
-            // 
-            // изменитьToolStripMenuItem
-            // 
-            this.изменитьToolStripMenuItem.Name = "изменитьToolStripMenuItem";
-            this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
-            this.изменитьToolStripMenuItem.Text = "Изменить";
             // 
             // pnManipulation
             // 
@@ -121,7 +189,7 @@
             this.pnManipulation.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnManipulation.Location = new System.Drawing.Point(3, 3);
             this.pnManipulation.Name = "pnManipulation";
-            this.pnManipulation.Size = new System.Drawing.Size(868, 48);
+            this.pnManipulation.Size = new System.Drawing.Size(868, 63);
             this.pnManipulation.TabIndex = 19;
             // 
             // pbAdd
@@ -140,7 +208,7 @@
             // 
             this.lblDelete.AutoSize = true;
             this.lblDelete.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblDelete.Location = new System.Drawing.Point(137, 31);
+            this.lblDelete.Location = new System.Drawing.Point(137, 36);
             this.lblDelete.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDelete.Name = "lblDelete";
             this.lblDelete.Size = new System.Drawing.Size(54, 15);
@@ -151,12 +219,13 @@
             // 
             this.lblAdd.AutoSize = true;
             this.lblAdd.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblAdd.Location = new System.Drawing.Point(2, 31);
+            this.lblAdd.Location = new System.Drawing.Point(7, 31);
             this.lblAdd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAdd.Name = "lblAdd";
-            this.lblAdd.Size = new System.Drawing.Size(59, 15);
+            this.lblAdd.Size = new System.Drawing.Size(54, 30);
             this.lblAdd.TabIndex = 13;
-            this.lblAdd.Text = "Добавить";
+            this.lblAdd.Text = "Сделать\r\nзаказ";
+            this.lblAdd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pbDelete
             // 
@@ -168,6 +237,7 @@
             this.pbDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbDelete.TabIndex = 17;
             this.pbDelete.TabStop = false;
+            this.pbDelete.Click += new System.EventHandler(this.pbDelete_Click);
             // 
             // pbUpdate
             // 
@@ -184,7 +254,7 @@
             // 
             this.lblUpdate.AutoSize = true;
             this.lblUpdate.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblUpdate.Location = new System.Drawing.Point(65, 31);
+            this.lblUpdate.Location = new System.Drawing.Point(65, 36);
             this.lblUpdate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUpdate.Name = "lblUpdate";
             this.lblUpdate.Size = new System.Drawing.Size(62, 15);
@@ -204,6 +274,7 @@
             // 
             // dgvDevice
             // 
+            this.dgvDevice.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvDevice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDevice.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDevice.Location = new System.Drawing.Point(3, 3);
@@ -223,6 +294,7 @@
             // 
             // dgvStationery
             // 
+            this.dgvStationery.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvStationery.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStationery.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvStationery.Location = new System.Drawing.Point(0, 0);
@@ -232,6 +304,7 @@
             // 
             // tcReports
             // 
+            this.tcReports.Controls.Add(this.button1);
             this.tcReports.Location = new System.Drawing.Point(4, 22);
             this.tcReports.Name = "tcReports";
             this.tcReports.Padding = new System.Windows.Forms.Padding(3);
@@ -239,6 +312,16 @@
             this.tcReports.TabIndex = 4;
             this.tcReports.Text = "Отчёты";
             this.tcReports.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.Location = new System.Drawing.Point(3, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(868, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Аналитический отчёт о заказах за месяц";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // tpSettings
             // 
@@ -255,15 +338,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(882, 469);
             this.Controls.Add(this.tcMain);
+            this.Controls.Add(this.msAdmin);
             this.MaximizeBox = false;
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Учёт периферийных устройств и канцелярии";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
             this.Load += new System.EventHandler(this.MainWindow_Load);
+            this.cmsDevice.ResumeLayout(false);
+            this.msAdmin.ResumeLayout(false);
+            this.msAdmin.PerformLayout();
             this.tcMain.ResumeLayout(false);
             this.tpOrders.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
-            this.cmsDevice.ResumeLayout(false);
             this.pnManipulation.ResumeLayout(false);
             this.pnManipulation.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAdd)).EndInit();
@@ -273,30 +360,39 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDevice)).EndInit();
             this.tpMagazineStationery.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStationery)).EndInit();
+            this.tcReports.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
+        private System.Windows.Forms.ContextMenuStrip cmsDevice;
+        private System.Windows.Forms.ToolStripMenuItem изменитьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem выйтиИзУчётнойЗаписиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem заврешитьРаботуToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip msAdmin;
+        private System.Windows.Forms.ToolStripMenuItem администрированиеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ролиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem пользователиToolStripMenuItem;
         private System.Windows.Forms.TabControl tcMain;
         private System.Windows.Forms.TabPage tpOrders;
-        private System.Windows.Forms.TabPage tpMagazineDevice;
-        private System.Windows.Forms.TabPage tpMagazineStationery;
-        private System.Windows.Forms.TabPage tpSettings;
-        private System.Windows.Forms.TabPage tcReports;
-        private System.Windows.Forms.DataGridView dgvDevice;
-        private System.Windows.Forms.DataGridView dgvStationery;
-        private System.Windows.Forms.ContextMenuStrip cmsDevice;
-        private System.Windows.Forms.Label lblDelete;
-        private System.Windows.Forms.PictureBox pbDelete;
-        private System.Windows.Forms.Label lblUpdate;
-        private System.Windows.Forms.PictureBox pbUpdate;
-        private System.Windows.Forms.Label lblAdd;
-        private System.Windows.Forms.PictureBox pbAdd;
-        private System.Windows.Forms.Panel pnManipulation;
         private System.Windows.Forms.DataGridView dgvOrders;
-        private System.Windows.Forms.ToolStripMenuItem изменитьToolStripMenuItem;
+        private System.Windows.Forms.Panel pnManipulation;
+        private System.Windows.Forms.PictureBox pbAdd;
+        private System.Windows.Forms.Label lblDelete;
+        private System.Windows.Forms.Label lblAdd;
+        private System.Windows.Forms.PictureBox pbDelete;
+        private System.Windows.Forms.PictureBox pbUpdate;
+        private System.Windows.Forms.Label lblUpdate;
+        private System.Windows.Forms.TabPage tpMagazineDevice;
+        private System.Windows.Forms.DataGridView dgvDevice;
+        private System.Windows.Forms.TabPage tpMagazineStationery;
+        private System.Windows.Forms.DataGridView dgvStationery;
+        private System.Windows.Forms.TabPage tcReports;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TabPage tpSettings;
     }
 }
 
