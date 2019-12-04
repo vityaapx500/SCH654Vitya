@@ -126,6 +126,15 @@
   <data name="DatabaseSearchTochki" xml:space="preserve">
     <value>Поиск баз данных...</value>
   </data>
+  <data name="LetterPassLog" xml:space="preserve">
+    <value>Логин не должен иметь русских букв! Пароль должен иметь хотя бы одну заглавную английскую и русскую буквы, одну прописную английскую и русскую буквы, цифру, спецсимвол!</value>
+  </data>
+  <data name="MinLengthPassLog" xml:space="preserve">
+    <value>Логин и пароль должны иметь минимальную длину 8 символов, а максимальную 16 символов!</value>
+  </data>
+  <data name="PasswordRepeatPasswordMustMatch" xml:space="preserve">
+    <value>Пароли должны совпадать. Проверьте правильность ввода!</value>
+  </data>
   <data name="ServerSearch" xml:space="preserve">
     <value>Поиск серверов</value>
   </data>

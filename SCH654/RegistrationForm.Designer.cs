@@ -38,9 +38,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tbPantronymic = new System.Windows.Forms.TextBox();
             this.lblPantronymic = new System.Windows.Forms.Label();
-            this.tbFirstName = new System.Windows.Forms.TextBox();
+            this.tbName = new System.Windows.Forms.TextBox();
             this.lblFirstName = new System.Windows.Forms.Label();
-            this.tbSecondName = new System.Windows.Forms.TextBox();
+            this.tbSurname = new System.Windows.Forms.TextBox();
             this.lblSecondName = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnRegistr = new System.Windows.Forms.Button();
@@ -147,14 +147,14 @@
             this.lblPantronymic.TabIndex = 57;
             this.lblPantronymic.Text = "Отчество";
             // 
-            // tbFirstName
+            // tbName
             // 
-            this.tbFirstName.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tbFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tbFirstName.Location = new System.Drawing.Point(0, 107);
-            this.tbFirstName.Name = "tbFirstName";
-            this.tbFirstName.Size = new System.Drawing.Size(255, 26);
-            this.tbFirstName.TabIndex = 56;
+            this.tbName.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbName.Location = new System.Drawing.Point(0, 107);
+            this.tbName.Name = "tbName";
+            this.tbName.Size = new System.Drawing.Size(255, 26);
+            this.tbName.TabIndex = 56;
             // 
             // lblFirstName
             // 
@@ -167,14 +167,14 @@
             this.lblFirstName.TabIndex = 55;
             this.lblFirstName.Text = "Имя";
             // 
-            // tbSecondName
+            // tbSurname
             // 
-            this.tbSecondName.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tbSecondName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tbSecondName.Location = new System.Drawing.Point(0, 61);
-            this.tbSecondName.Name = "tbSecondName";
-            this.tbSecondName.Size = new System.Drawing.Size(255, 26);
-            this.tbSecondName.TabIndex = 54;
+            this.tbSurname.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tbSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbSurname.Location = new System.Drawing.Point(0, 61);
+            this.tbSurname.Name = "tbSurname";
+            this.tbSurname.Size = new System.Drawing.Size(255, 26);
+            this.tbSurname.TabIndex = 54;
             // 
             // lblSecondName
             // 
@@ -207,6 +207,7 @@
             this.btnRegistr.TabIndex = 51;
             this.btnRegistr.Text = "Зарегистрироваться";
             this.btnRegistr.UseVisualStyleBackColor = true;
+            this.btnRegistr.Click += new System.EventHandler(this.btnRegistr_Click);
             // 
             // btnAuthoriz
             // 
@@ -217,6 +218,7 @@
             this.btnAuthoriz.TabIndex = 50;
             this.btnAuthoriz.Text = "Авторизироваться";
             this.btnAuthoriz.UseVisualStyleBackColor = true;
+            this.btnAuthoriz.Click += new System.EventHandler(this.btnAuthoriz_Click);
             // 
             // RegistrationForm
             // 
@@ -233,16 +235,17 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbPantronymic);
             this.Controls.Add(this.lblPantronymic);
-            this.Controls.Add(this.tbFirstName);
+            this.Controls.Add(this.tbName);
             this.Controls.Add(this.lblFirstName);
-            this.Controls.Add(this.tbSecondName);
+            this.Controls.Add(this.tbSurname);
             this.Controls.Add(this.lblSecondName);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnRegistr);
             this.Controls.Add(this.btnAuthoriz);
             this.Name = "RegistrationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RegistrationForm";
+            this.Text = "Регистрация";
+            this.Load += new System.EventHandler(this.RegistrationForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,9 +263,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbPantronymic;
         private System.Windows.Forms.Label lblPantronymic;
-        private System.Windows.Forms.TextBox tbFirstName;
+        private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.Label lblFirstName;
-        private System.Windows.Forms.TextBox tbSecondName;
+        private System.Windows.Forms.TextBox tbSurname;
         private System.Windows.Forms.Label lblSecondName;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button btnRegistr;

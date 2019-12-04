@@ -13,7 +13,7 @@ namespace SCH654
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AuthorizationFrom());
+            Application.Run(new AuthorizationForm());
         }
     }
 }

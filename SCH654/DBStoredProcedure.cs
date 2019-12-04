@@ -88,8 +88,8 @@ namespace SCH654
             storedProcedure.Parameters.AddWithValue("@surname", surname);
             storedProcedure.Parameters.AddWithValue("@name", name);
             storedProcedure.Parameters.AddWithValue("@pantronymic", pantronymic);
-            storedProcedure.Parameters.AddWithValue("@login", loginUser);
-            storedProcedure.Parameters.AddWithValue("@password", passwordUser);
+            storedProcedure.Parameters.AddWithValue("@login_user", loginUser);
+            storedProcedure.Parameters.AddWithValue("@password_user", passwordUser);
             storedProcedure.Parameters.AddWithValue("@user_role_id", userRoleID);
 
             ExecuteStoredProcedure();
@@ -103,8 +103,8 @@ namespace SCH654
             storedProcedure.Parameters.AddWithValue("@surname", surname);
             storedProcedure.Parameters.AddWithValue("@name", name);
             storedProcedure.Parameters.AddWithValue("@pantronymic", pantronymic);
-            storedProcedure.Parameters.AddWithValue("@login", loginUser);
-            storedProcedure.Parameters.AddWithValue("@password", passwordUser);
+            storedProcedure.Parameters.AddWithValue("@login_user", loginUser);
+            storedProcedure.Parameters.AddWithValue("@password_user", passwordUser);
             storedProcedure.Parameters.AddWithValue("@user_role_id", userRoleID);
 
             ExecuteStoredProcedure();
@@ -160,13 +160,13 @@ namespace SCH654
             ExecuteStoredProcedure();
         }
 
-        public void SPOrderLogicalDelete(Int32 idOrder) //Логическое удаление заказа
-        {
-            ConfigurationProcedure("order_logical_delete");
+        //public void SPOrderLogicalDelete(Int32 idOrder) //Логическое удаление заказа
+        //{
+        //    ConfigurationProcedure("order_logical_delete");
 
-            storedProcedure.Parameters.AddWithValue("@ID_order", idOrder);
+        //    storedProcedure.Parameters.AddWithValue("@ID_order", idOrder);
 
-            ExecuteStoredProcedure();
-        }
+        //    ExecuteStoredProcedure();
+        //}
     }
 }

@@ -5,7 +5,6 @@ namespace SCH654
 {
     class DynamicObjects
     {
-        DataManipulation dataManipulation = new DataManipulation();
         DBStoredProcedure storedProcedure = new DBStoredProcedure();
         MainWindow mainWindow = new MainWindow();
         Form fmCreateOrder = new Form();
@@ -20,7 +19,7 @@ namespace SCH654
         public Form parentCteate = new Form();
         string[] orderStatus = new string[] { "Не принят", "В обработке", "Готов к выдаче" };
 
-        public void NewCreateOrderCreate()
+        public void NewCreateOrderCreate() //Создание динамической формы Офомление заказа
         {
 
             fmCreateOrder.Text = "Новый заказ";
@@ -41,10 +40,11 @@ namespace SCH654
             lblStatus.Dock = DockStyle.Top;
             cbStatus.Dock = DockStyle.Top;
             cbStatus.SelectedIndex = -1;
+            //cbStatus.
             cbStatus.Items.AddRange(orderStatus);
             btnMakeOrder.Text = "Сделать заказ";
             btnMakeOrder.Dock = DockStyle.Top;
-            btnMakeOrder.Click += dataManipulation.AddOrder;
+            btnMakeOrder.Click += AddOrder;
             btnCancel.Dock = DockStyle.Top;
             btnCancel.Text = "Отмена";
             btnCancel.Click += btnCancel_Click;
@@ -60,9 +60,58 @@ namespace SCH654
             fmCreateOrder.Show(parentCteate);
 
         }
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e) //Кнопка Закрыть
         {
             this.fmCreateOrder.Close();
+        }
+
+        //Процедуры манипулирования данными
+        public void AddOrder(object sender, EventArgs e) //Добаление заказа
+        {
+            try
+            {
+                storedProcedure.SPOrderInsert(tbOrder.Text, tbDateOrder.Text, cbStatus.SelectedItem.ToString());
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        //private void UpdateOrder(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        storedProcedure.SPOrderUpdate(Convert.ToInt32(dgvEmployees.CurrentRow.Cells[0].Value.ToString()), tbSurname.Text, tbName.Text, tbPantronymic.Text, Convert.ToDateTime(tbDateBirth.Text),
+        //    Convert.ToInt32(tbNumUdostov.Text), tbNameUchilisha.Text, Convert.ToDateTime(tbDateOkonch.Text), tbLogin.Text, tbPassword.Text, Convert.ToInt32(cbDolj.SelectedIndex));
+        //    }
+        //    catch
+        //    {
+        //        MessageBox.Show("Ошибка при изменении данных");
+        //    }
+        //    tbSurname.Clear();
+        //    tbName.Clear();
+        //    tbPantronymic.Clear();
+        //    tbDateBirth.Clear();
+        //    tbNumUdostov.Clear();
+        //    tbNameUchilisha.Clear();
+        //    tbDateOkonch.Clear();
+        //    tbLogin.Clear();
+        //    tbPassword.Clear();
+        //    cbDolj.SelectedValue = -1;
+        //}
+
+        public void DeleteOrder(object sender, EventArgs e) //добавление заказа
+        {
+            //MessageBox.Show("Вы действительно желаете удалить заказ " + tbOrder.Text + " от " + tbDateOrder.Text + "?", "Удаления заказа", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            //try
+            //{
+            //    storedProcedure.SPOrderDelete(Convert.ToInt32(mainWindow.dgvOrders.CurrentRow.Cells[0].Value.ToString()));
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
     }
 }

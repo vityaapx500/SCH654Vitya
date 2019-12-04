@@ -88,6 +88,33 @@ namespace SCH654 {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Логин не должен иметь русских букв! Пароль должен иметь хотя бы одну заглавную английскую и русскую буквы, одну прописную английскую и русскую буквы, цифру, спецсимвол!.
+        /// </summary>
+        internal static string LetterPassLog {
+            get {
+                return ResourceManager.GetString("LetterPassLog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Логин и пароль должны иметь минимальную длину 8 символов, а максимальную 16 символов!.
+        /// </summary>
+        internal static string MinLengthPassLog {
+            get {
+                return ResourceManager.GetString("MinLengthPassLog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Пароли должны совпадать. Проверьте правильность ввода!.
+        /// </summary>
+        internal static string PasswordRepeatPasswordMustMatch {
+            get {
+                return ResourceManager.GetString("PasswordRepeatPasswordMustMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Поиск серверов.
         /// </summary>
         internal static string ServerSearch {

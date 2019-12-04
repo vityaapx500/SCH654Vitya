@@ -129,13 +129,13 @@
             // ролиToolStripMenuItem
             // 
             this.ролиToolStripMenuItem.Name = "ролиToolStripMenuItem";
-            this.ролиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ролиToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ролиToolStripMenuItem.Text = "Роли";
             // 
             // пользователиToolStripMenuItem
             // 
             this.пользователиToolStripMenuItem.Name = "пользователиToolStripMenuItem";
-            this.пользователиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.пользователиToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.пользователиToolStripMenuItem.Text = "Пользователи";
             this.пользователиToolStripMenuItem.Click += new System.EventHandler(this.пользователиToolStripMenuItem_Click);
             // 
@@ -237,7 +237,7 @@
             this.pbDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbDelete.TabIndex = 17;
             this.pbDelete.TabStop = false;
-            this.pbDelete.Click += new System.EventHandler(this.pbDelete_Click);
+            this.pbDelete.Click += new System.EventHandler(this.DeleteOrder);
             // 
             // pbUpdate
             // 
@@ -276,6 +276,7 @@
             // 
             this.dgvDevice.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvDevice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDevice.ContextMenuStrip = this.cmsDevice;
             this.dgvDevice.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDevice.Location = new System.Drawing.Point(3, 3);
             this.dgvDevice.Name = "dgvDevice";
@@ -296,6 +297,7 @@
             // 
             this.dgvStationery.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvStationery.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStationery.ContextMenuStrip = this.cmsDevice;
             this.dgvStationery.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvStationery.Location = new System.Drawing.Point(0, 0);
             this.dgvStationery.Name = "dgvStationery";
@@ -304,6 +306,7 @@
             // 
             // tcReports
             // 
+            this.tcReports.ContextMenuStrip = this.cmsDevice;
             this.tcReports.Controls.Add(this.button1);
             this.tcReports.Location = new System.Drawing.Point(4, 22);
             this.tcReports.Name = "tcReports";
@@ -378,7 +381,6 @@
         private System.Windows.Forms.ToolStripMenuItem пользователиToolStripMenuItem;
         private System.Windows.Forms.TabControl tcMain;
         private System.Windows.Forms.TabPage tpOrders;
-        private System.Windows.Forms.DataGridView dgvOrders;
         private System.Windows.Forms.Panel pnManipulation;
         private System.Windows.Forms.PictureBox pbAdd;
         private System.Windows.Forms.Label lblDelete;
@@ -393,6 +395,7 @@
         private System.Windows.Forms.TabPage tcReports;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabPage tpSettings;
+        public System.Windows.Forms.DataGridView dgvOrders;
     }
 }
 

@@ -16,8 +16,8 @@ namespace SCH654
         public DataTable DTRoles = new DataTable("roles");
         public DataTable DTUsers = new DataTable("users");
 
-        public string QRMagazineDevice = "SELECT [ID_device], [name_type], [manufacturer], [model], [amount], [date_acceptance] from [dbo].[magazine_device " +
-            "inner join[dbo].[device_type] on[dbo].[magazine_device].[type_ID] = device_type.ID_type";
+        public string QRMagazineDevice = "SELECT [ID_device], [name_type], [manufacturer], [model], [amount], [date_acceptance] from [dbo].[magazine_device] " +
+            "inner join [dbo].[device_type] on [dbo].[magazine_device].[type_ID] = [device_type].[ID_type]";
         public string QRMagazineStationery = "select [ID_stationery], [manufacturer], [name_stationery], [type_stationary], [amount], [date_acceptance] from [dbo].[magazine_stationery] ";
         public string QROrder = "select [ID_order], [description], [date_order], [order_status] from [dbo].[orders] where order_logical_delete = 0";
         public string QRRoles = "select * from [dbo].[roles] where [role_logical_delete] = 0";

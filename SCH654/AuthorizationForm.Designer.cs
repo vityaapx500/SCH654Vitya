@@ -1,6 +1,6 @@
 ﻿namespace SCH654
 {
-    partial class AuthorizationFrom
+    partial class AuthorizationForm
     {
         /// <summary>
         /// Required designer variable.
@@ -57,6 +57,7 @@
             this.btnRegistr.TabIndex = 26;
             this.btnRegistr.Text = "Зарегистрироваться";
             this.btnRegistr.UseVisualStyleBackColor = true;
+            this.btnRegistr.Click += new System.EventHandler(this.btnRegistr_Click);
             // 
             // tbPassword
             // 
@@ -114,7 +115,7 @@
             this.lblTitle.Text = "Авторизация";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // AuthorizationFrom
+            // AuthorizationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -126,9 +127,10 @@
             this.Controls.Add(this.tbLogin);
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.lblTitle);
-            this.Name = "AuthorizationFrom";
+            this.Name = "AuthorizationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Авторизация";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AuthorizationForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

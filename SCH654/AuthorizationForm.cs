@@ -4,13 +4,13 @@ using System.Windows.Forms;
 
 namespace SCH654
 {
-    public partial class AuthorizationFrom : Form
+    public partial class AuthorizationForm : Form
     {
         DBTables dbTables = new DBTables();
         private static DBConnection dBConnection = new DBConnection();
         private int checkUser = 0;
         public static int userRole = 0;
-        public AuthorizationFrom()
+        public AuthorizationForm()
         {
             InitializeComponent();
         }
@@ -57,6 +57,8 @@ namespace SCH654
 
         private void AuthorizationForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            RegistrationForm registrationForm = new RegistrationForm();
+            registrationForm.Close();
             Application.Exit();
         }
 
@@ -64,6 +66,13 @@ namespace SCH654
         {
             if (e.KeyChar == 13)
                 btnEnter_Click(sender, e);
+        }
+
+        private void btnRegistr_Click(object sender, EventArgs e)
+        {
+            RegistrationForm registrationForm = new RegistrationForm();
+            registrationForm.Show();
+            this.Hide();
         }
     }
 }
