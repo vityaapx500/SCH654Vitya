@@ -22,7 +22,8 @@ namespace SCH654
         public string QROrder = "select [ID_order], [description], [date_order], [order_status] from [dbo].[orders] where order_logical_delete = 0";
         public string QRRoles = "select * from [dbo].[roles] where [role_logical_delete] = 0";
         public string QRRolesForComboBox = "select R.[ID_role], [role_name] from [dbo].[roles] R where [role_logical_delete] = 0";
-        public string QRUsers = "select * from [dbo].[users] where [user_logical_delete] = 0";
+        public string QRUsers = "select [role_name], [surname], [name], [pantronymic], [login_user], [password_user] from [dbo].[users] " +
+            "inner join [dbo].[roles] on [dbo].[users].[user_role_id] = [roles].[ID_role] where [user_logical_delete] = 0";
         public SqlDependency dependency = new SqlDependency();
         private void DataTableFill(DataTable table, string query)
         {

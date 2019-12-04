@@ -30,22 +30,16 @@ namespace SCH654
             {
                 case 1:
                     msAdmin.Visible = true;
-                    pbUpdate.Visible = true;
-                    lblUpdate.Visible = true;
                     lblDelete.Visible = true;
                     pbDelete.Visible = true;
                     dgvOrders.Visible = true;
                     break;
                 case 2:
-                    pbUpdate.Visible = false;
-                    lblUpdate.Visible = false;
                     lblDelete.Visible = false;
                     pbDelete.Visible = false;
                     dgvOrders.Visible = false;
                     break;
                 case 3:
-                    pbUpdate.Visible = true;
-                    lblUpdate.Visible = true;
                     lblDelete.Visible = true;
                     pbDelete.Visible = true;
                     dgvOrders.Visible = true;
@@ -89,22 +83,16 @@ namespace SCH654
             switch (AuthorizationForm.userRole)
             {
                 case 1:
-                    pbUpdate.Visible = false;
-                    lblUpdate.Visible = false;
                     lblDelete.Visible = false;
                     pbDelete.Visible = false;
                     dgvOrders.Visible = false;
                     break;
                 case 2:
-                    pbUpdate.Visible = false;
-                    lblUpdate.Visible = false;
                     lblDelete.Visible = false;
                     pbDelete.Visible = false;
                     dgvOrders.Visible = false;
                     break;
                 case 3:
-                    pbUpdate.Visible = false;
-                    lblUpdate.Visible = false;
                     lblDelete.Visible = false;
                     pbDelete.Visible = false;
                     dgvOrders.Visible = false;
@@ -147,8 +135,7 @@ namespace SCH654
         }
         private void DeleteOrder(object sender, EventArgs e) //Удаление заказа
         {
-            MessageBox.Show("Вы действительно желаете удалить заказ " + dgvOrders.CurrentRow.Cells[1].ToString() + " от " + dgvOrders.CurrentRow.Cells[2].ToString() + "?", "Удаления заказа", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            switch(DialogResult)
+            switch(MessageBox.Show("Вы действительно желаете удалить заказ " + dgvOrders.CurrentRow.Cells[1].Value.ToString() + " от " + dgvOrders.CurrentRow.Cells[2].Value.ToString() + "?", "Удаления заказа", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
             {
                 case (DialogResult.Yes):
                     try
@@ -159,8 +146,6 @@ namespace SCH654
                     {
                         MessageBox.Show(ex.Message);
                     }
-                    break;
-                case (DialogResult.No):
                     break;
             }
         }

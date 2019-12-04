@@ -7,8 +7,8 @@ namespace SCH654
 {
     class DBConnection
     {
-        private static string dataSource = @"VICTOR-PC\DOTSUSQL";
-        //private static string dataSource = @"ВИКТОР-ПК\VICTOR_SQL";
+        //private static string dataSource = @"VICTOR-PC\DOTSUSQL";
+        private static string dataSource = @"ВИКТОР-ПК\VICTOR_SQL";
         private static string initialCatalog = "school654_v1";
         private static string userID = "sa";
         private static string password = "123";

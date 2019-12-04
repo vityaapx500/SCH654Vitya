@@ -17,7 +17,6 @@ namespace SCH654
         Button btnMakeOrder = new Button();
         Button btnCancel = new Button();
         public Form parentCteate = new Form();
-        string[] orderStatus = new string[] { "Не принят", "В обработке", "Готов к выдаче" };
 
         public void NewCreateOrderCreate() //Создание динамической формы Офомление заказа
         {
@@ -39,9 +38,9 @@ namespace SCH654
             lblStatus.Text = "Статус заказа";
             lblStatus.Dock = DockStyle.Top;
             cbStatus.Dock = DockStyle.Top;
-            cbStatus.SelectedIndex = -1;
-            //cbStatus.
-            cbStatus.Items.AddRange(orderStatus);
+            cbStatus.Items.AddRange(new object[] {"В обработке", "Готов к выдаче" } );
+            cbStatus.SelectedIndex = 0;
+            cbStatus.Enabled = false;
             btnMakeOrder.Text = "Сделать заказ";
             btnMakeOrder.Dock = DockStyle.Top;
             btnMakeOrder.Click += AddOrder;

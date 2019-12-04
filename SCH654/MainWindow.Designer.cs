@@ -46,8 +46,6 @@
             this.lblDelete = new System.Windows.Forms.Label();
             this.lblAdd = new System.Windows.Forms.Label();
             this.pbDelete = new System.Windows.Forms.PictureBox();
-            this.pbUpdate = new System.Windows.Forms.PictureBox();
-            this.lblUpdate = new System.Windows.Forms.Label();
             this.tpMagazineDevice = new System.Windows.Forms.TabPage();
             this.dgvDevice = new System.Windows.Forms.DataGridView();
             this.tpMagazineStationery = new System.Windows.Forms.TabPage();
@@ -63,7 +61,6 @@
             this.pnManipulation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDelete)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbUpdate)).BeginInit();
             this.tpMagazineDevice.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDevice)).BeginInit();
             this.tpMagazineStationery.SuspendLayout();
@@ -184,8 +181,6 @@
             this.pnManipulation.Controls.Add(this.lblDelete);
             this.pnManipulation.Controls.Add(this.lblAdd);
             this.pnManipulation.Controls.Add(this.pbDelete);
-            this.pnManipulation.Controls.Add(this.pbUpdate);
-            this.pnManipulation.Controls.Add(this.lblUpdate);
             this.pnManipulation.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnManipulation.Location = new System.Drawing.Point(3, 3);
             this.pnManipulation.Name = "pnManipulation";
@@ -208,7 +203,7 @@
             // 
             this.lblDelete.AutoSize = true;
             this.lblDelete.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblDelete.Location = new System.Drawing.Point(137, 36);
+            this.lblDelete.Location = new System.Drawing.Point(64, 40);
             this.lblDelete.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDelete.Name = "lblDelete";
             this.lblDelete.Size = new System.Drawing.Size(54, 15);
@@ -230,7 +225,7 @@
             // pbDelete
             // 
             this.pbDelete.Image = global::SCH654.Properties.Resources.delete;
-            this.pbDelete.Location = new System.Drawing.Point(151, 2);
+            this.pbDelete.Location = new System.Drawing.Point(78, 6);
             this.pbDelete.Margin = new System.Windows.Forms.Padding(2);
             this.pbDelete.Name = "pbDelete";
             this.pbDelete.Size = new System.Drawing.Size(24, 27);
@@ -238,28 +233,6 @@
             this.pbDelete.TabIndex = 17;
             this.pbDelete.TabStop = false;
             this.pbDelete.Click += new System.EventHandler(this.DeleteOrder);
-            // 
-            // pbUpdate
-            // 
-            this.pbUpdate.Image = global::SCH654.Properties.Resources.change;
-            this.pbUpdate.Location = new System.Drawing.Point(85, 2);
-            this.pbUpdate.Margin = new System.Windows.Forms.Padding(2);
-            this.pbUpdate.Name = "pbUpdate";
-            this.pbUpdate.Size = new System.Drawing.Size(24, 27);
-            this.pbUpdate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbUpdate.TabIndex = 15;
-            this.pbUpdate.TabStop = false;
-            // 
-            // lblUpdate
-            // 
-            this.lblUpdate.AutoSize = true;
-            this.lblUpdate.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblUpdate.Location = new System.Drawing.Point(65, 36);
-            this.lblUpdate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblUpdate.Name = "lblUpdate";
-            this.lblUpdate.Size = new System.Drawing.Size(62, 15);
-            this.lblUpdate.TabIndex = 16;
-            this.lblUpdate.Text = "Изменить";
             // 
             // tpMagazineDevice
             // 
@@ -358,7 +331,6 @@
             this.pnManipulation.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAdd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDelete)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbUpdate)).EndInit();
             this.tpMagazineDevice.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDevice)).EndInit();
             this.tpMagazineStationery.ResumeLayout(false);
@@ -386,8 +358,6 @@
         private System.Windows.Forms.Label lblDelete;
         private System.Windows.Forms.Label lblAdd;
         private System.Windows.Forms.PictureBox pbDelete;
-        private System.Windows.Forms.PictureBox pbUpdate;
-        private System.Windows.Forms.Label lblUpdate;
         private System.Windows.Forms.TabPage tpMagazineDevice;
         private System.Windows.Forms.DataGridView dgvDevice;
         private System.Windows.Forms.TabPage tpMagazineStationery;
